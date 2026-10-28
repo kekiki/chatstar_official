@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <!-- TODO: 替换功能配图：MOMENTS（建议 800x600） -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="30" cy="26" r="90" fill="#fff" opacity=".08"/>
+  <circle cx="390" cy="290" r="110" fill="#fff" opacity=".08"/>
+  <g stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="136" y="102" width="128" height="96" rx="18"/>
+    <path d="M150 182l32-36 22 24 16-18 26 30"/>
+  </g>
+  <circle cx="174" cy="130" r="9" fill="#fff"/>
+  <path d="M330 52c1 4.2 2.8 6 7 7-4.2 1-6 2.8-7 7-1-4.2-2.8-6-7-7 4.2-1 6-2.8 7-7Z" fill="#fff" opacity=".6"/>
+  <text x="388" y="290" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#fff" opacity=".55">Replace this placeholder</text>
+</svg>

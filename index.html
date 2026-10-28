@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatstar - Live Video & Global Social</title>
+  <meta name="description"
+    content="Chatstar is a global social platform that helps you connect with friends worldwide through live video and shared moments.">
+  <meta name="theme-color" content="#6366F1">
+  <link rel="icon" type="image/webp" href="static/picture/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <script src="https://trtc.io/knocket-sdk/sdk.js?identifier=e0812a94a2105cbafa&v=1791596365273" async></script>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Chatstar home">
+        <img src="static/picture/logo.webp" alt="Chatstar logo" width="512" height="512">
+        <span class="brand-name">Chatstar</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="registration.html">Registration Agreement</a></li>
+          <li><a href="child_safety.html">Child Safety Policy</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#download">Download</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 2c1.4 5.8 3.8 8.2 9.6 9.6-5.8 1.4-8.2 3.8-9.6 9.6-1.4-5.8-3.8-8.2-9.6-9.6C8.2 10.2 10.6 7.8 12 2Z" />
+            </svg>
+            Global Social Platform
+          </span>
+          <h1>Live Video &amp;<br><span class="grad-text">Global Social</span></h1>
+          <p class="hero-sub">Connect with global friends through live video and shared moments.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">Download App</a>
+            <a class="btn btn-outline" href="#features">Explore Features</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><b>10M+</b><span>Users worldwide</span></div>
+            <div class="stat"><b>150+</b><span>Countries &amp; regions</span></div>
+            <div class="stat"><b>4.8</b><span>Average rating</span></div>
+          </div>
+        </div>
+        <div class="hero-media reveal">
+          <!-- TODO: 替换主视觉图（当前为占位图：static/picture/hero-photo.svg，建议 1440x1120 JPG/PNG/WebP） -->
+          <img src="static/picture/hero-photo.svg" alt="Chatstar live video chat preview" width="720" height="560">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Features</span>
+          <h2>Everything you need to feel close</h2>
+          <p>From instant connections to shared moments, Chatstar brings the whole world to your screen.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-media">
+              <!-- TODO: 替换功能配图（当前为占位图：static/picture/feature-connect.svg） -->
+              <img src="static/picture/feature-connect.svg" alt="Connect with people around the world" width="400"
+                height="300">
+            </div>
+            <div class="feature-body">
+              <span class="feature-tag">Connect</span>
+              <h3>Meet the world</h3>
+              <p>Discover and match with interesting people from every corner of the globe, anytime, anywhere.</p>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-media">
+              <!-- TODO: 替换功能配图（当前为占位图：static/picture/feature-video.svg） -->
+              <img src="static/picture/feature-video.svg" alt="Smooth live video chat" width="400" height="300">
+            </div>
+            <div class="feature-body">
+              <span class="feature-tag">Video</span>
+              <h3>Smooth live chat</h3>
+              <p>High-quality one-on-one live video with smart matching and low-latency connections.</p>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-media">
+              <!-- TODO: 替换功能配图（当前为占位图：static/picture/feature-moments.svg） -->
+              <img src="static/picture/feature-moments.svg" alt="Share your day with moments" width="400" height="300">
+            </div>
+            <div class="feature-body">
+              <span class="feature-tag">Moments</span>
+              <h3>Share your day</h3>
+              <p>Post photos and short videos to share your life with friends and followers.</p>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-media">
+              <!-- TODO: 替换功能配图（当前为占位图：static/picture/feature-discover.svg） -->
+              <img src="static/picture/feature-discover.svg" alt="Discover inspiring stories" width="400" height="300">
+            </div>
+            <div class="feature-body">
+              <span class="feature-tag">Discover</span>
+              <h3>Inspiring stories</h3>
+              <p>Explore trending topics and inspiring stories from a vibrant global community.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <!-- TODO: 替换 About 配图（当前为占位图：static/picture/about.svg，建议 1200x900） -->
+          <img src="static/picture/about.svg" alt="The Chatstar global community" width="800" height="600">
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">About Us</span>
+          <h2>Real people, real conversations</h2>
+          <p>Chatstar is a vibrant global social platform designed to help you build sincere, high-quality connections
+            through real-time video and life sharing. We believe in the power of authentic communication, moving beyond
+            simple profiles to real human experiences.</p>
+          <ul class="about-list">
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12.5l5 5L20 6.5" />
+                </svg></span>
+              <div>
+                <b>Global community</b>
+                <p>Millions of users across 150+ countries and regions.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12.5l5 5L20 6.5" />
+                </svg></span>
+              <div>
+                <b>Safety first</b>
+                <p>24/7 moderation, reporting and blocking to keep the community safe.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12.5l5 5L20 6.5" />
+                </svg></span>
+              <div>
+                <b>Authentic connection</b>
+                <p>Face-to-face video that brings real emotion back to social networking.</p>
+              </div>
+            </li>
+          </ul>
+          <a class="btn btn-primary" href="#download">Join Chatstar Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download" id="download">
+      <div class="container">
+        <div class="download-inner reveal">
+          <div class="download-copy">
+            <h2>Ready to meet the world?</h2>
+            <p>Download Chatstar and start your first live video chat today.</p>
+          </div>
+          <div class="download-actions">
+            <!-- TODO: 替换为真实应用商店下载链接 -->
+            <a class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.myapp.chatstar"
+              rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4 2.6c0-.9 1-1.5 1.8-1L19.2 9c.8.5.8 1.6 0 2.1L5.8 18.6c-.8.5-1.8-.1-1.8-1V2.6Z"
+                  transform="translate(1 1)" />
+              </svg>
+              <span class="store-label"><small>GET IT ON</small>Google Play</span>
+            </a>
+            <!-- TODO: 替换为真实应用商店下载链接 -->
+            <a class="btn btn-store-ghost" href="#" rel="noopener">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12.7 5.3c.9-1.1 1.5-2.6 1.3-4.1-1.4.1-3 .9-4 2-.8.9-1.5 2.4-1.3 3.9 1.6.1 3.1-.8 4-1.8Zm4.3 10.6c-.4 1-1.2 2.2-2.1 2.2-.9 0-1.6-.7-2.9-.7-1.3 0-2 .7-2.8.7-1 0-2-1.1-2.6-2.2-1.6-2.7-1.2-6.7 1.1-7.9 1-.6 2.3-.5 3.1 0 .7.4 1.7.7 2.8.7 1 0 2-.3 2.8-.7.9-.6 2.2-.6 3.2.2-.8.9-1.6 2.3-1.6 3.8 0 1.7.9 3.2 2 4.1-.4.3-.7.5-.9.8Z"
+                  transform="translate(-1.5 1)" />
+              </svg>
+              <span class="store-label"><small>DOWNLOAD ON THE</small>App Store</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Chatstar home">
+            <img src="static/picture/logo.webp" alt="Chatstar logo" width="512" height="512">
+            <span class="footer-brand-name">Chatstar</span>
+          </a>
+          <p>Connect with global friends through live video.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="#about">About</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
+          <a href="registration.html">Registration Agreement</a>
+          <a href="child_safety.html">Child Safety Policy</a>
+          <a href="#download">Download</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; <span data-year>2026</span> Chatstar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
