@@ -4,9 +4,9 @@
 	<title>Delete Account</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<script src="lib/axios.min.js"></script>
-	<script src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="delete_account/index.css">
+	<script src="delete_account/lib/axios.min.js"></script>
+	<script src="delete_account/index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 
 </head>
@@ -17,21 +17,21 @@
 	</div>
 	<div id="content-container">
 		<div id="warning">
-			<img src="assets/warning.webp" />
+			<img src="delete_account/assets/warning.webp" />
 			<div>After canceling your account, all your assets in the app will be destroyed!</div>
 		</div>
-		<div id="logo"><img src="assets/logo.webp" /></div>
+		<div id="logo"><img src="delete_account/assets/logo.webp" /></div>
 		<div id="app_name">Chatstar</div>
 		<div id="account_tip">Account ID:</div>
 		<div id="account_input">
 			<input type="text" name="username" placeholder="Please enter your account ID"
 				oninput="toggleDeleteButton(this)">
-			<img src="assets/close.webp" onclick="deleteInput(this);" />
+			<img src="delete_account/assets/close.webp" onclick="deleteInput(this);" />
 		</div>
 		<div id="password_tip">Account password:</div>
 		<div id="password_input">
 			<input type="password" name="password" placeholder="Please enter your password">
-			<img src="assets/eye_off.webp" onclick="onTogglePasswordShow(this)" />
+			<img src="delete_account/assets/eye_off.webp" onclick="onTogglePasswordShow(this)" />
 		</div>
 		<div id="desc">
 			*Clarify:
