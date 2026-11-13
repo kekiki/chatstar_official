@@ -1,5 +1,6 @@
 var passwordShow = false;
-var requestUrl = 'https://api.chatstarapp.xyz/user/deleteAccountWithAccountPassword';
+var requestUrl = 'https://api.chatstarapp.xyz/api/user/deleteAccountWithAccountPassword';
+var isSubmitting = false;
 
 function toggleDeleteButton(input) {
     var deleteButton = document.querySelector('#account_input img');
@@ -26,38 +27,73 @@ function onTogglePasswordShow(img) {
     }
     passwordShow = !passwordShow;
 }
-function onSubmit() {
+function getDeleteErrorMessage(data) {
+    if (!data || typeof data !== 'object') {
+        return '';
+    }
+    if (typeof data.detail === 'string' && data.detail) {
+        return data.detail;
+    }
+    if (Array.isArray(data.detail)) {
+        return 'Invalid account details. Please check your account ID and password.';
+    }
+    return (typeof data.message === 'string' && data.message) ||
+        (typeof data.msg === 'string' && data.msg) || '';
+}
 
-    var password = document.querySelector('#password_input input').value;
-    var username = document.querySelector('#account_input input').value;
-    if (username == '') {
-        alert('Please enter your account')
-        return;
-    }
-    if (password == '') {
-        alert('Please enter you password')
-        return;
-    }
-    if (confirm('Please confirm your operation, your account will be destroyed immediately after cancellation!') == false) {
+async function onSubmit() {
+    if (isSubmitting) {
         return;
     }
 
-    // 密码进行md5加密
-    var md5Password = CryptoJS.MD5(password).toString();
-    axios.post(requestUrl, {
-        username: username,
-        password: md5Password,
-    }).then(response => {
-        console.log(response);
-        let data = response['data']
-        if (data['code'] == 200) {
-            alert('Successfully canceled account')
-            document.querySelector('#password_input input').value = '';
-            document.querySelector('#account_input input').value = '';
+    var passwordInput = document.querySelector('#password_input input');
+    var accountInput = document.querySelector('#account_input input');
+    var password = passwordInput.value;
+    var username = accountInput.value.trim();
+    if (username === '') {
+        alert('Please enter your account ID');
+        return;
+    }
+    if (!/^\d+$/.test(username)) {
+        alert('Please enter a valid numeric account ID');
+        return;
+    }
+    if (password === '') {
+        alert('Please enter your password');
+        return;
+    }
+    if (!confirm('Please confirm your operation, your account will be destroyed immediately after cancellation!')) {
+        return;
+    }
+
+    var submitButton = document.querySelector('#submit-box button');
+    isSubmitting = true;
+    submitButton.disabled = true;
+
+    try {
+        // The API verifies the original password against its server-side hash.
+        var response = await axios.post(requestUrl, {
+            username: username,
+            password: password,
+        });
+        var data = response.data;
+        if (data && data.code === 200) {
+            alert('Account deleted successfully');
+            passwordInput.value = '';
+            accountInput.value = '';
+            toggleDeleteButton(accountInput);
         } else {
-            alert(data['message'])
+            alert(getDeleteErrorMessage(data) || 'Unable to delete your account. Please try again.');
         }
-    }).catch(err => {
-        console.log(err)
-    })
+    } catch (err) {
+        if (err.response) {
+            alert(getDeleteErrorMessage(err.response.data) ||
+                'Unable to delete your account. Please try again later.');
+        } else {
+            alert('Unable to connect to the server. Please check your connection and try again.');
+        }
+    } finally {
+        isSubmitting = false;
+        submitButton.disabled = false;
+    }
 }
